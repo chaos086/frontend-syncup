@@ -1,92 +1,118 @@
-/* Barra superior principal */
+/* =========================================================
+   BARRA SUPERIOR - ESTILO SPOTIFY MEJORADO
+   ========================================================= */
 .top-bar {
-  display: flex; /* Layout flexible horizontal */
-  justify-content: space-between; /* Espacio entre secciones */
-  align-items: center; /* Alineación vertical centrada */
-  background-color: #1DB954; /* Verde Spotify */
-  padding: 12px 25px; /* Espaciado interno */
-  color: white; /* Color de texto */
-  font-family: 'Segoe UI', sans-serif; /* Fuente moderna */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Sombra suave */
-  max-width: 1200px; /* Ancho máximo */
-  margin: 0 auto; /* Centrado horizontal */
-  border-radius: 8px; /* Bordes redondeados */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1db954 0%, #1ed760 100%);
+  padding: 16px 32px;
+  color: white;
+  font-family: 'Inter', 'Circular', 'Helvetica Neue', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  margin: 0;
+  border-radius: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Contenedor de la información del usuario */
+/* =========================================================
+   INFORMACIÓN DEL USUARIO
+   ========================================================= */
 .user-info {
-  display: flex; /* Layout flexible */
-  align-items: center; /* Centrado vertical */
-  gap: 12px; /* Espacio entre icono y nombre */
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-/* Icono de perfil */
 .user-icon {
-  font-size: 46px; /* Tamaño del icono */
-  color: white; /* Color blanco */
-  transition: transform 0.3s; /* Transición suave para hover */
+  font-size: 42px;
+  color: white;
+  transition: transform 0.2s ease;
 }
 
 .user-icon:hover {
-  transform: scale(1.1); /* Agrandar ligeramente al pasar el mouse */
+  transform: scale(1.08);
 }
 
-/* Nombre de usuario */
 .username {
-  font-weight: 600; /* Negrita moderada */
-  font-size: 20px; /* Tamaño de fuente */
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.3px;
 }
 
-/* Contenedor de los botones de navegación */
+/* =========================================================
+   BOTONES DE NAVEGACIÓN
+   ========================================================= */
 .nav-buttons {
-  display: flex; /* Layout flexible horizontal */
-  gap: 14px; /* Espacio entre botones */
-  justify-content: center; /* Centrado de los botones */
-  flex: 1; /* Ocupa todo el espacio disponible */
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
 }
 
-/* Botones generales de navegación */
 .nav-btn {
-  background-color: #191414; /* Negro oscuro estilo Spotify */
-  color: #1DB954; /* Verde Spotify */
-  border: none; /* Sin borde */
-  padding: 10px 20px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-  cursor: pointer; /* Cursor puntero */
-  font-weight: 600; /* Texto semi-negrita */
-  font-size: 16px; /* Tamaño legible */
-  display: flex; /* Layout flexible para icono y texto */
-  align-items: center; /* Alineación vertical centrada */
-  gap: 8px; /* Espacio entre icono y texto */
-  transition: all 0.3s ease; /* Transición suave al interactuar */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 22px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: none;
+  backdrop-filter: blur(10px);
 }
 
 .nav-btn:hover {
-  background-color: #1DB954; /* Verde Spotify al pasar el mouse */
-  color: #191414; /* Texto negro */
-  transform: translateY(-2px); /* Efecto de elevación */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más marcada */
+  background-color: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* Botón de cerrar sesión */
+.nav-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   BOTÓN DE CERRAR SESIÓN
+   ========================================================= */
+.logout-btn-container {
+  display: flex;
+  align-items: center;
+}
+
 .logout-btn {
-  background-color: #191414; /* Negro oscuro */
-  color: #1DB954; /* Verde Spotify */
-  border-radius: 10px; /* Bordes redondeados */
-  font-weight: 600; /* Texto semi-negrita */
-  transition: all 0.3s ease; /* Transición suave al interactuar */
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 22px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
 }
 
 .logout-btn:hover {
-  background-color: #1DB954; /* Verde Spotify al pasar el mouse */
-  color: #191414; /* Texto negro */
-  transform: translateY(-2px); /* Efecto de elevación */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más marcada */
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* Contenedor del botón de cerrar sesión */
-.logout-btn-container {
-  display: flex; /* Layout flexible */
-  align-items: center; /* Centrado vertical */
+.logout-btn:active {
+  transform: translateY(0);
 }

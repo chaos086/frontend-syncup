@@ -1,4 +1,93 @@
 /* ============================================================
+   TOP BAR ADMIN — Estilo Spotify
+   ============================================================ */
+
+.app-top-bar-admin {
+  width: 100%;
+  height: 70px;
+  background: #181818; /* Negro Spotify */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid #000;
+}
+
+/* ---- Lado izquierdo ---- */
+.app-top-bar-admin .left-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.app-top-bar-admin .left-area .user-icon {
+  width: 42px;
+  height: 42px;
+  background: #282828;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Nombre del usuario */
+.app-top-bar-admin .left-area .username {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ---- Botones / Navigation ---- */
+.app-top-bar-admin .nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Estilo minimalista Spotify */
+.app-top-bar-admin .nav-buttons button {
+  background: #2a2a2a;
+  border: 1px solid #333;
+  padding: 10px 18px;
+  color: #fff;
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hover inspirado en Spotify */
+.app-top-bar-admin .nav-buttons button:hover {
+  background: #3a3a3a;
+  border-color: #444;
+  transform: scale(1.03);
+}
+
+/* Botón cerrar sesión */
+.app-top-bar-admin .logout-btn {
+  background: #1db954; /* Verde Spotify */
+  color: #000;
+  border: none;
+  font-weight: 600;
+}
+
+.app-top-bar-admin .logout-btn:hover {
+  background: #1ed760;
+}
+
+
+/* ============================================================
    LAYOUT GENERAL
    Organización del panel principal donde se divide la vista.
    ============================================================ */

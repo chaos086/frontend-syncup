@@ -1,35 +1,44 @@
+/* ESTILOS MÉTRICAS TIPO SPOTIFY */
+
 .metricas-container {
   padding: 40px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f5f6fa 0%, #e1e4f0 100%);
+  font-family: 'Inter', 'Circular', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(180deg, #121212 0%, #0a0a0a 100%);
   min-height: 100vh;
+  color: #ffffff;
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
-  background: linear-gradient(90deg, #273c75, #192a56);
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #1db954 0%, #1ed760 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  text-transform: uppercase;
 }
 
+/* Pantalla de carga */
 .loading {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 250px;
+  height: 400px;
 }
 
 .spinner {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #273c75;
+  border: 6px solid rgba(255, 255, 255, 0.1);
+  border-top: 6px solid #1db954;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   animation: spin 1s linear infinite;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.3);
 }
 
 @keyframes spin {
@@ -41,14 +50,22 @@ h2 {
   }
 }
 
-.metricas-content {
-  animation: fadeIn 1s ease-in-out;
+.loading p {
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-@keyframes fadeIn {
+/* Animación de contenido */
+.metricas-content {
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -56,67 +73,178 @@ h2 {
   }
 }
 
+/* Resumen de métricas */
 .metricas-resumen {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
   flex-wrap: wrap;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .resumen-card {
-  background: #fff;
-  padding: 25px 35px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #181818 0%, #282828 100%);
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   text-align: center;
-  min-width: 220px;
-  flex: 1 1 220px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 250px;
+  flex: 1 1 250px;
+  max-width: 320px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.resumen-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #1db954 0%, #1ed760 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.resumen-card:hover::before {
+  transform: scaleX(1);
 }
 
 .resumen-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(29, 185, 84, 0.2);
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
 }
 
 .resumen-card h3 {
-  margin-bottom: 12px;
-  color: #192a56;
-  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .resumen-card p {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #273c75;
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #1db954 0%, #1ed760 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  letter-spacing: -1px;
 }
 
+/* Contenedor de gráficas */
 .charts-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 35px;
+  gap: 40px;
   justify-content: center;
 }
 
 .chart-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  flex: 1 1 420px;
-  max-width: 520px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: linear-gradient(135deg, #181818 0%, #282828 100%);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  flex: 1 1 450px;
+  max-width: 550px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.chart-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #1db954 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.chart-card:hover::after {
+  opacity: 1;
 }
 
 .chart-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(29, 185, 84, 0.15);
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
 }
 
 .chart-card h3 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #273c75;
-  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Estilos para canvas de gráficas */
+canvas {
+  max-width: 100%;
+  height: auto !important;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .metricas-container {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .resumen-card {
+    min-width: 100%;
+  }
+  
+  .chart-card {
+    min-width: 100%;
+  }
+}
+
+/* Animación de entrada para las cards */
+.resumen-card,
+.chart-card {
+  animation: slideInScale 0.6s ease-out backwards;
+}
+
+.resumen-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.resumen-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.chart-card:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.chart-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

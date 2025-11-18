@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+/* ESTILOS GLOBALES TIPO SPOTIFY */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --spotify-black: #121212;
+  --spotify-dark-gray: #181818;
+  --spotify-gray: #282828;
+  --spotify-light-gray: #b3b3b3;
+  --spotify-white: #ffffff;
+  --spotify-green: #1db954;
+  --spotify-green-hover: #1ed760;
+  --sidebar-bg: #000000;
+}
+
+body {
+  font-family: 'Inter', 'Circular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--spotify-black);
+  color: var(--spotify-white);
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar personalizado tipo Spotify */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--spotify-dark-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--spotify-gray);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3e3e3e;
+}
+
+/* Estilos base para inputs */
+input {
+  font-family: inherit;
+}
+
+/* Animaciones suaves globales */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}

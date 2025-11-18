@@ -255,6 +255,21 @@ export class MenuUsuario implements OnInit {
   // Radio y recomendaciones
   // ----------------------------
 
+obtenerTituloRadio(): string {
+  switch (this.filtroActivo) {
+    case 'radio':
+      return this.tituloRadio || 'Radio';
+    case 'descubrimiento':
+      return this.tituloRadio || 'Descubrimiento Semanal';
+    case 'favoritas':
+      return 'Tus Favoritas';
+    case 'general':
+      return 'Canciones Generales';
+    default:
+      return '';
+  }
+}
+
   /** Inicia la radio basada en la canción actual */
   iniciarRadio() {
     if (!this.cancionActual) return;
@@ -309,7 +324,7 @@ export class MenuUsuario implements OnInit {
 
     this.reproducirRadio = false;
     this.filtroActivo = 'descubrimiento';
-    this.tituloRadio = 'Tu descubrimiento semanal';
+    this.tituloRadio = 'Descubrimiento semanal';
 
     this.recomendacionService.generarDescubrimientoSemanal(this.idUsuarioLogueado).subscribe({
       next: (playListDto) => {
@@ -324,4 +339,5 @@ export class MenuUsuario implements OnInit {
       error: (err) => console.error('Error cargando descubrimiento semanal', err),
     });
   }
+  
 }

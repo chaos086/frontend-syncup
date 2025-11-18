@@ -1,325 +1,234 @@
-/* Contenedor principal del perfil */
 .perfil-container {
-  display: flex;
-  flex-direction: column; /* Organiza verticalmente */
-  gap: 30px;
-  justify-content: center;
-  margin: 40px auto;
-  max-width: 1200px;
-  padding: 20px;
+  background: linear-gradient(135deg, #181818 0%, #121212 100%);
+  color: #fff;
+  font-family: 'Inter', 'Circular', 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
+  padding-top: 40px;
 }
 
-/* Fila que contiene las tarjetas del perfil (izquierda y derecha) */
+/* Cards principales */
+.perfil-card {
+  background: linear-gradient(135deg, #181818 0%, #222 100%);
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(29,185,84,0.16), 0 2px 16px #000a;
+  border: 1.5px solid #232323;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.perfil-card:hover {
+  box-shadow: 0 12px 32px rgba(29,185,84,0.26), 0 2px 24px #000c;
+  transform: translateY(-4px) scale(1.01);
+}
+
+.perfil-card.info-card    { max-width: 350px; }
+.perfil-card.form-card    { min-width: 350px; width: 440px; }
+
+/* Fila de perfil */
 .perfil-fila {
   display: flex;
-  gap: 30px;
-  flex-wrap: wrap; /* Ajusta verticalmente en pantallas pequeñas */
+  gap: 35px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-/* Tarjetas de información y formularios */
-.perfil-card {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-  width: 380px;
-  font-family: 'Segoe UI', sans-serif;
-  color: #000000;
-}
-
-/* Tarjeta izquierda con información del usuario */
-.info-card {
-  max-width: 330px;
-}
-
-/* Tarjeta derecha con formulario */
-.form-card {
-  width: 450px;
-}
-
-/* Icono de perfil centrado */
+/* Icono del usuario */
 .perfil-foto {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 19px;
 }
-
 .perfil-foto i {
-  font-size: 95px;
-  color: #087f32;
-  transition: 0.3s;
+  font-size: 92px;
+  color: #1db954;
+  box-shadow: 0 0 34px 0 rgba(29,185,84,0.26);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #232323 0%, #1db95422 100%);
+  padding: 8px;
+  transition: transform 0.35s, box-shadow 0.35s;
 }
-
 .perfil-foto i:hover {
-  transform: scale(1.05);
+  transform: scale(1.09);
+  box-shadow: 0 0 64px 10px rgba(29,185,84,0.38);
 }
 
-/* Información textual del usuario */
+/* Info usuario */
+.info-usuario {
+  margin-bottom: 18px;
+}
 .info-usuario p {
-  font-size: 17px;
-  margin: 6px 0;
-  color: #000000;
+  font-size: 19px;
+  margin: 7px 0;
+  color: #b3b3b3;
+}
+.info-usuario strong {
+  color: #fff !important;
+  letter-spacing: 0.1em;
 }
 
-/* Botones generales de acción */
-.btn-accion {
-  background-color: #ffffff;
-  color: #087f32;
-  padding: 10px;
-  border-radius: 10px;
+/* Acciones de perfil */
+.acciones {
+  margin-top: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn-accion, .btn-guardar, .btn-aceptacion {
+  background: #1db954;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 13px 22px;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(29,185,84,0.18);
+  transition: background 0.22s, transform 0.22s;
+  letter-spacing: 0.9px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  transition: 0.25s;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  gap: 8px;
+}
+.btn-accion:hover, .btn-guardar:hover, .btn-aceptacion:hover {
+  background: #1ed760;
+  transform: scale(1.04) translateY(-1.5px);
 }
 
-.btn-accion:hover {
-  background-color: #17a548;
+/* Botones rojos de acciones peligrosas */
+.btn-accion.rojo, .btn-guardar.rojo, .btn-rojo {
+  background-color: #d9534f;
   color: #fff;
-  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(217,83,79,0.22);
 }
-
-/* Botón de acción de color rojo */
-.btn-accion.rojo {
-  color: #d32f2f;
+.btn-accion.rojo:hover, .btn-guardar.rojo:hover, .btn-rojo:hover {
+  background-color: #c9302c;
+  transform: scale(1.04) translateY(-1.5px);
 }
-
-.btn-accion.rojo:hover {
-  background-color: #d32f2f;
-  color: white;
-}
-
-/* Contenedor de acciones */
-.acciones {
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Subtítulo de formulario */
-.subtitulo {
-  color: #087f32;
-  font-size: 22px;
-  margin-bottom: 12px;
-}
-
-/* Grupos de inputs en formulario */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
 .form-group label {
   font-weight: 600;
-  margin-bottom: 6px;
+  color: #b3b3b3;
+  margin-bottom: 8px;
 }
-
-input {
+input[type="text"], input[type="password"], textarea {
+  background: rgba(255,255,255,0.04);
+  border: 2px solid #1db95444;
+  border-radius: 8px;
   padding: 12px;
-  border-radius: 10px;
-  border: 2px solid #087f3250;
-  font-size: 15px;
-  outline: none;
-  transition: 0.3s;
-}
-
-input:focus {
-  border-color: #087f32;
-  box-shadow: 0 0 6px #087f3260;
-}
-
-/* Botón de guardar cambios */
-.btn-guardar {
-  background-color: #087f32;
-  color: white;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
+  color: #fff;
   font-size: 16px;
-  font-weight: 600;
-  transition: 0.25s;
+  margin-bottom: 14px;
+  transition: border-color 0.16s, box-shadow 0.16s;
+}
+input:focus, textarea:focus {
+  border-color: #1db954;
+  box-shadow: 0 0 0 2px #1db95450;
+  outline: none;
 }
 
-.btn-guardar:hover {
-  background-color: #0a9e3b;
-  transform: translateY(-2px);
+/* Subtítulo en formularios */
+.subtitulo {
+  background: linear-gradient(90deg, #1db954, #1ed760);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 12px;
+  font-size: 23px;
 }
-
-/* Botón guardar de tipo rojo (alerta) */
-.btn-guardar.rojo {
-  background-color: #d9534f;
-}
-
-.btn-guardar.rojo:hover {
-  background-color: #c9302c;
-}
-
-/* Línea divisoria */
-hr {
-  border: 1px solid #087f3235;
-  margin: 25px 0;
-}
-
-/* Sección de canciones favoritas */
 .perfil-favoritas {
-  margin-top: 30px;
+  margin-top: 38px;
   width: 100%;
-  margin-left: 30px;
 }
 
-/* Layout horizontal: lista de canciones + botones */
 .favoritas-layout {
   display: flex;
   gap: 20px;
   align-items: flex-start;
 }
-
-/* Lista de canciones ocupa la mayor parte del espacio */
 .lista-canciones {
   flex: 2;
+  background: linear-gradient(135deg, #191919 0%, #232323 100%);
+  border-radius: 12px;
+  padding: 18px;
 }
-
-/* Contenedor de botones al lado derecho de la lista */
-.favoritas-botones {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 160px;
-}
-
-.btn-aceptacion {
-  background: linear-gradient(to right, #087f32, #8bb699);
-  color: white;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: 0.3s;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.btn-aceptacion:hover {
-  background: linear-gradient(to right, #0aa645, #9ee5af);
-  transform: translateY(-2px);
-}
-
-/* Botón azul con efecto degradado */
-.btn-azul-plateado {
-  background: linear-gradient(to right, #607d8b, #90a4ae);
-  color: white;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: 0.3s;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.btn-azul-plateado:hover {
-  background: linear-gradient(to right, #546e7a, #78909c);
-  transform: translateY(-2px);
-}
-
-/* Botón rojo de acciones profesionales */
-.btn-rojo {
-  background-color: #d9534f;
-  color: white;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: 0.3s;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.btn-rojo:hover {
-  background-color: #c9302c;
-  transform: translateY(-2px);
-}
-
-/* Contenedor de botones debajo de la lista de favoritas */
-.favoritas-botones-inferior {
-  display: flex; /* Alinea botones horizontalmente */
-  gap: 10px;
-  margin-top: 15px;
-}
-
-/* Información de la canción seleccionada */
 .cancion-info {
   flex: 1;
-  background: #f5f5f5;
-  padding: 20px;
+  background: linear-gradient(135deg, #282828 0%, #191919 100%);
+  padding: 24px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(29,185,84,0.07);
+  color: #fff;
 }
-
-/* Botones dentro del panel de canción */
-.botones-cancion {
+.cancion-info h4 {
+  background: linear-gradient(90deg, #1db954, #1ed760);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 19px;
+  font-weight: 800;
+}
+.botones-cancion, .favoritas-botones-inferior {
   display: flex;
-  justify-content: flex-end;
   gap: 10px;
   margin-top: 15px;
 }
 
-/* --- Sección social --- */
-/* Social section layout | Sección Social Layout */
+/* Botón descarga CSV */
+.btn-azul-plateado {
+  background: linear-gradient(90deg, #323f4b 0%, #53697f 100%);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  padding: 13px 22px;
+  box-shadow: 0 2px 8px rgba(90,100,110,0.18);
+}
+.btn-azul-plateado:hover {
+  background: linear-gradient(90deg, #394959 0%, #719db2 100%);
+}
 .social-wrapper {
   margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 28px;
 }
 
-/* Card container | Contenedor tipo tarjeta */
 .social-card {
-  background: #ffffff;
+  background: linear-gradient(135deg, #222 0%, #191919 100%);
   border-radius: 14px;
   padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 20px rgba(29,185,84,0.12);
+  color: #fff;
+  border: 1.2px solid #232323;
 }
 
-/* Title | Título */
+/* Título social */
 .social-title {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 15px;
-  border-left: 5px solid #3f87f5;
+  border-left: 5px solid #1db954;
   padding-left: 10px;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
 }
 
+/* Botones sociales */
 .botones-sugerencia {
   margin-top: 10px;
-  padding: 10px;
-  border-top: 1px solid #ddd;
+  padding: 10px 0;
+  border-top: 1px solid #232323;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+@media (max-width: 900px) {
+  .perfil-fila { flex-direction: column; gap: 16px; }
+  .perfil-card, .form-card { width: 99%; min-width: unset; }
+  .social-wrapper { grid-template-columns: 1fr; }
 }

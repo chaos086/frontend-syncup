@@ -188,31 +188,41 @@ audio {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  background: linear-gradient(90deg, #000000, #000000, #000000);
+  background: linear-gradient(90deg, #1db954, #1ed760, #1db954 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: 1px;
   margin-bottom: 20px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  text-shadow:
+    0 2px 8px rgba(29, 185, 84, 0.3),
+    0 0px 2px rgba(34,255,128,0.17),
+    0 3px 8px rgba(34,255,128,0.11);
 }
-
-/* Animación de entrada */
+.titulo-radio i {
+  margin-right: 11px;
+  font-size: 2.1rem;
+  vertical-align: middle;
+  text-shadow: 0 0 7px #1ed76088;
+}
 .animar-titulo {
-  animation: entrada-titulo 1s ease-out forwards;
+  animation: entrada-titulo 0.85s cubic-bezier(.8,-0.5,.25,1.25) forwards;
 }
-
 @keyframes entrada-titulo {
   0% {
     opacity: 0;
-    transform: translateY(-20px) scale(0.8);
+    transform: translateY(-28px) scale(0.9);
+    filter: blur(6px);
   }
-  50% {
-    opacity: 0.7;
-    transform: translateY(5px) scale(1.05);
+  60% {
+    opacity: 0.88;
+    transform: translateY(8px) scale(1.08);
+    filter: blur(1px);
   }
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
+    filter: none;
   }
 }
 

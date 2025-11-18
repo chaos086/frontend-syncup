@@ -1,16 +1,20 @@
 <!-- Contenedor principal del menú de usuario -->
 <div class="contenedor-menu">
-  <!-- Título dinámico de la lista: solo visible para radio o descubrimiento semanal -->
-  <h2
-    *ngIf="filtroActivo === 'radio' || filtroActivo === 'descubrimiento'"
-    class="titulo-radio animar-titulo"
-  >
-    <!-- Icono dinámico según tipo de filtro -->
-    <i class="fa" [ngClass]="filtroActivo === 'radio' ? 'fa-broadcast-tower' : 'fa-music'"></i>
-    {{ tituloRadio }}
+  <!-- TÍTULO DINÁMICO ANIMADO SIEMPRE VISUAL -->
+  <h2 *ngIf="filtroActivo"
+      class="titulo-radio animar-titulo">
+    <i
+      class="fa"
+      [ngClass]="
+        filtroActivo === 'radio' ? 'fa-broadcast-tower' :
+        filtroActivo === 'descubrimiento' ? 'fa-music' :
+        filtroActivo === 'favoritas' ? 'fa-heart' :
+        'fa-music'
+      "></i>
+    {{ obtenerTituloRadio() }}
   </h2>
 
-  <!-- Sección de botones para filtrar la lista de canciones -->
+  <!-- ...resto del menú (no cambia nada aquí)... -->
   <div class="botones-filtros">
     <button (click)="mostrarCancionesGenerales()" [class.active]="filtroActivo === 'general'">
       Canciones Generales
@@ -22,6 +26,9 @@
       Descubrimiento Semanal
     </button>
   </div>
+  <!-- ...resto igual... -->
+</div>
+
 
   <!-- Lista de canciones centrada en la UI -->
   <div class="lista-wrapper">
@@ -31,7 +38,6 @@
       (cancionSeleccionada)="onSeleccionarCancion($event)"
     ></app-lista-canciones>
   </div>
-</div>
 
 <!-- Reproductor de música fijo estilo Spotify -->
 <div class="player-container" *ngIf="cancionActual">
